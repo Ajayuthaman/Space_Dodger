@@ -5,11 +5,11 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float speed = 5f;
-    public float deactivateTimer = 3f;
+    public float destroyTime = 3f;
 
     private void Start()
     {
-        Invoke("DeactivateGameObject", deactivateTimer);
+        Invoke("DeactivateGameObject", destroyTime);//Destroy the bullet when it go outside of the screen
     }
 
     private void Update()
@@ -27,6 +27,6 @@ public class BulletScript : MonoBehaviour
 
     void DeactivateGameObject()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

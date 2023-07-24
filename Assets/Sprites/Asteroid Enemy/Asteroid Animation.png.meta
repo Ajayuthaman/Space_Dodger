@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Asteroid Animation_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 43
+        width: 234
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91185f4ed18ff8848b7646cc3893ec8d
+      internalID: 755870915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asteroid Animation_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 408
+        width: 254
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e9f5ff8fe10ec439d3664511a8cbc2
+      internalID: 2053098742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asteroid Animation_0
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 407
+        width: 273
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bfe9e1d6b6fae46a75d8f08fa2fe74
+      internalID: -438225839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asteroid Animation_1
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 386
+        width: 322
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58330c6a405b93d4d869f91dab55a213
+      internalID: -730122330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asteroid Animation_2
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 28
+        width: 278
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2945005c03f648b42a6c3cf8e66fed96
+      internalID: -569217506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asteroid Animation_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 18
+        width: 273
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ad1e249e27c74448cbdf0bb18166fe
+      internalID: 1543500379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +271,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Asteroid Animation_0: -438225839
+      Asteroid Animation_1: -730122330
+      Asteroid Animation_10: 755870915
+      Asteroid Animation_11: -1916363013
+      Asteroid Animation_12: 292965485
+      Asteroid Animation_13: -1856055281
+      Asteroid Animation_14: -1862907468
+      Asteroid Animation_15: 270680983
+      Asteroid Animation_16: -401261351
+      Asteroid Animation_17: -123539578
+      Asteroid Animation_18: -1939280825
+      Asteroid Animation_19: 2053098742
+      Asteroid Animation_2: -569217506
+      Asteroid Animation_3: 1543500379
+      Asteroid Animation_4: -926870645
+      Asteroid Animation_5: 10228522
+      Asteroid Animation_6: 388895128
+      Asteroid Animation_7: 140077395
+      Asteroid Animation_8: 1405692012
+      Asteroid Animation_9: 1382779393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

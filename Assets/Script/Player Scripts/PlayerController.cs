@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
 
-    public float minY, maxY;
+    public float minY, maxY;//limit the player in the screenspace
 
     [SerializeField]
     private GameObject _playerBullet;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
             temp.y += speed * Time.deltaTime;
 
             if (temp.y > maxY)
-                temp.y = maxY;
+                temp.y = maxY;//limiting the up direction
 
             transform.position = temp;
 
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             temp.y -= speed * Time.deltaTime;
 
             if (temp.y < minY)
-                temp.y = minY;
+                temp.y = minY;//limiting the down direction
 
             transform.position = temp;
         }
