@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     private Text _highScoreText;
     private int _highScore;
 
+
     private void Start()
     {
         LoadHighScore();
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
 
     public void Play()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level");
     }
 

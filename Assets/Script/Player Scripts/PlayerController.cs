@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,12 @@ public class PlayerController : MonoBehaviour
     private PlayerController _playerController;
 
     [SerializeField]
+    private GameManager _gameManager;
+
+    [SerializeField]
     private AudioClip _explodeSound;
+
+    public UnityEvent _event;
 
     private void OnEnable()
     {
@@ -59,7 +65,9 @@ public class PlayerController : MonoBehaviour
     public void DestroyPlayer()
     {
         _playerController.enabled = false;
+        _gameManager.enabled = false;
         AudioManager.instance.PlaySound(_explodeSound);
         Destroy(gameObject, 1f);
+        _event.Invoke();
     }
 }
