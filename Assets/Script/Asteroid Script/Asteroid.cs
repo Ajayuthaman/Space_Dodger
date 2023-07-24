@@ -5,7 +5,7 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     [SerializeField]
-    public AnimationClip destructionAnimation; 
+    private AnimationClip destructionAnimation; 
 
     private Animator animator;
 
