@@ -18,9 +18,28 @@ public class PlayerController : MonoBehaviour
     private float _currentAttackTimer;
     private bool _canAttack;
 
+    private PlayerController _playerController;
+
+    [SerializeField]
+    private AudioClip _fireSound;
+
+    [SerializeField]
+    private AudioClip _explodeSound;
+
+    private void OnEnable()
+    {
+        Asteroid.item += DestroyPlayer; 
+    }
+
+    private void OnDisable()
+    {
+        Asteroid.item -= DestroyPlayer; 
+    }
+
     private void Start()
     {
         _currentAttackTimer = attackTimer;
+        _playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -57,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+       
         attackTimer += Time.deltaTime;
 
         if(attackTimer > _currentAttackTimer)
@@ -73,8 +93,16 @@ public class PlayerController : MonoBehaviour
 
                 Instantiate(_playerBullet, _attackPoint.position, Quaternion.identity);
 
-                //play sound fx
+                AudioManager.instance.PlaySound(_fireSound);
             }
         }
     }
+
+    public void DestroyPlayer()
+    {
+        _playerController.enabled = false;
+        AudioManager.instance.PlaySound(_explodeSound);
+        Destroy(gameObject,1f);
+    }
+
 }

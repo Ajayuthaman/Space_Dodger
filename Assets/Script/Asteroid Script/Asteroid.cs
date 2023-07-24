@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,22 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     [SerializeField]
-    private AnimationClip destructionAnimation; 
+    private AnimationClip destructionAnimation;
 
-    private Animator animator;
+    [SerializeField]
+    private Animator _playerAnim;
+
+    private Animator _asteroidAnim;
+
+    public static event Action item;
+
+    [SerializeField]
+    private AudioClip _explodeSound;
+
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _asteroidAnim = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -20,12 +30,22 @@ public class Asteroid : MonoBehaviour
         {
             DestroyAsteroid();
         }
+        else if (collision.CompareTag("Player"))
+        {
+            _playerAnim = collision.transform.GetComponent<Animator>();
+
+            Time.timeScale = 0.3f;
+            _playerAnim.SetTrigger("Destroy");
+            
+            item?.Invoke();
+        }
     }
 
     void DestroyAsteroid()
     {
+        AudioManager.instance.PlaySound(_explodeSound);
         // Play the destruction animation
-        animator.Play(destructionAnimation.name);
+        _asteroidAnim.Play(destructionAnimation.name);
 
         // Invoke the destruction method after the animation's duration
         Invoke("DestroyAfterAnimation", destructionAnimation.length);

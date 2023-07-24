@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 51ff05c1a1b364240abdc73a1cf127d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,3 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionAnimation: {fileID: 7400000, guid: ba78be2b8e48fbd4595885c2bb991d60, type: 2}
+  _playerAnim: {fileID: 0}
+  _explodeSound: {fileID: 8300000, guid: 345375efcb2f8964f8f2c59c1bdcc397, type: 3}
