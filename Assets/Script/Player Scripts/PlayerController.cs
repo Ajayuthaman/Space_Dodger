@@ -8,15 +8,25 @@ public class PlayerController : MonoBehaviour
 
     public float minY, maxY;
 
+    [SerializeField]
+    private GameObject _playerBullet;
+
+    [SerializeField]
+    private Transform _attackPoint;
+
+    public float attackTimer = 0.5f;
+    private float _currentAttackTimer;
+    private bool _canAttack;
+
     private void Start()
     {
-        
+        _currentAttackTimer = attackTimer;
     }
-
 
     private void Update()
     {
         MovePlayer();
+        Attack();
     }
 
 
@@ -42,6 +52,29 @@ public class PlayerController : MonoBehaviour
                 temp.y = minY;
 
             transform.position = temp;
+        }
+    }
+
+    void Attack()
+    {
+        attackTimer += Time.deltaTime;
+
+        if(attackTimer > _currentAttackTimer)
+        {
+            _canAttack = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (_canAttack)
+            {
+                _canAttack = false;
+                attackTimer = 0f;
+
+                Instantiate(_playerBullet, _attackPoint.position, Quaternion.identity);
+
+                //play sound fx
+            }
         }
     }
 }
