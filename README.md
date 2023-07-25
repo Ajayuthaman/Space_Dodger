@@ -12,8 +12,6 @@ Welcome to Space Dodger, an action-packed arcade game where you navigate through
 - [Scoring](#scoring)
 - [Difficulty Scaling](#difficulty-scaling)
 - [Installation](#installation)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Gameplay
 
