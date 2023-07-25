@@ -158,6 +158,7 @@ RectTransform:
   - {fileID: 1058537161}
   - {fileID: 394081394}
   - {fileID: 2056611833}
+  - {fileID: 278503332}
   m_Father: {fileID: 917236043}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -351,18 +352,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278503329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2056611833}
+  m_Father: {fileID: 80789011}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 36.0027, y: 1.3315}
-  m_SizeDelta: {x: 65.422, y: 23.3423}
+  m_AnchorMin: {x: 0.90500003, y: 0.025481887}
+  m_AnchorMax: {x: 0.98625, y: 0.08783937}
+  m_AnchoredPosition: {x: -0.1449585, y: 1.0640259}
+  m_SizeDelta: {x: 0.42199707, y: 1.3423004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &280985321
 GameObject:
@@ -1111,7 +1112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12375, y: 0.08783937}
   m_AnchorMax: {x: 0.86500007, y: 0.88932127}
-  m_AnchoredPosition: {x: 1.4240112, y: 1.1609955}
+  m_AnchoredPosition: {x: 1.4240112, y: 1.1609802}
   m_SizeDelta: {x: -2.3003998, y: 2.3219986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451340744
@@ -1308,7 +1309,7 @@ GameObject:
   - component: {fileID: 1753658949}
   - component: {fileID: 1753658948}
   m_Layer: 5
-  m_Name: Fire (1)
+  m_Name: GamePlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1330,9 +1331,9 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.020385817, y: 0.020000001}
-  m_AnchorMax: {x: 0.9563859, y: 0.55451375}
-  m_AnchoredPosition: {x: 2, y: -0.22779846}
-  m_SizeDelta: {x: -3.9998999, y: -0.43039703}
+  m_AnchorMax: {x: 0.9563859, y: 0.6035138}
+  m_AnchoredPosition: {x: 0.51123047, y: 0.49240112}
+  m_SizeDelta: {x: -4.9924, y: 0.98499966}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753658948
 MonoBehaviour:
@@ -1368,8 +1369,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: The game is you can move the spaceship using up & down/w,s Or using the
-    mobile Inputs. You need to avoid the asteroids you can shoot the asteroids using
-    space key / shoot button to destroy them.
+    mobile Inputs. Your main objective is to skillfully navigate through space, avoiding
+    dangerous asteroids that come your way. To defend yourself, you can take aim
+    and blast those asteroids into oblivion using the space key or shoot button,
+    proving your prowess as a space pilot!
 --- !u!222 &1753658949
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1532,15 +1535,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 278503332}
+  m_Children: []
   m_Father: {fileID: 80789011}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.71500003, y: 0.011357488}
-  m_AnchorMax: {x: 0.90124995, y: 0.097321264}
-  m_AnchoredPosition: {x: -0.6475525, y: 0.69000244}
-  m_SizeDelta: {x: 0.7990036, y: 0}
+  m_AnchorMin: {x: 0.6912501, y: 0.019839372}
+  m_AnchorMax: {x: 0.8875001, y: 0.097321264}
+  m_AnchoredPosition: {x: 1.6083984, y: -1.1184998}
+  m_SizeDelta: {x: 1.5074, y: 3}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2056611834
 MonoBehaviour:

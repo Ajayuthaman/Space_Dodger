@@ -10,9 +10,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private Transform _attackPoint;
 
-    public float attackTimer = 0.5f;
-    private float _currentAttackTimer;
-    private bool _canAttack;
+    public float attackCooldown = 0.5f;
+    private float _currentAttackTimer = 0f;
+    private bool _canAttack = true;
 
     [SerializeField]
     private AudioClip _fireSound;
@@ -21,8 +21,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        _currentAttackTimer = attackTimer;
-
         // Disable all the bullet objects in the attackSpawner initially.
         foreach (GameObject bullet in _bullets)
         {
@@ -32,36 +30,45 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        Attack();
-    }
-
-    void Attack()
-    {
-        attackTimer += Time.deltaTime;
-
-        if (attackTimer > _currentAttackTimer)
+        // Increase the attack timer if it's not ready to attack yet.
+        if (!_canAttack)
         {
-            _canAttack = true;
+            _currentAttackTimer += Time.deltaTime;
+            if (_currentAttackTimer >= attackCooldown)
+            {
+                _canAttack = true;
+                _currentAttackTimer = 0f;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && _canAttack)
         {
-            if (_canAttack)
-            {
-                _canAttack = false;
-                attackTimer = 0f;
+            Attack();
+        }
+    }
 
-                // Check if there's an inactive bullet in the object pool.
-                GameObject bullet = GetInactiveBullet();
-                if (bullet != null)
-                {
-                    bullet.transform.position = _attackPoint.position;
-                    bullet.SetActive(true);
+    public void OnAttackButtonPressed()
+    {
+        if (_canAttack)
+        {
+            Attack();
+        }
+    }
 
-                    // Play firing sound.
-                    AudioManager.instance.PlaySound(_fireSound);
-                }
-            }
+    public void Attack()
+    {
+        _canAttack = false;
+
+        // Check if there's an inactive bullet in the object pool.
+        GameObject bullet = GetInactiveBullet();
+        if (bullet != null)
+        {
+            // Play firing sound.
+            AudioManager.instance.PlaySound(_fireSound);
+
+            bullet.transform.position = _attackPoint.position;
+            bullet.SetActive(true);
+
         }
     }
 

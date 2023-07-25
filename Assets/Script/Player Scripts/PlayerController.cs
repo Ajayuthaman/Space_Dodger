@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     public float minY, maxY; // Limit the player in the screen space
+    private float verticalInput;
 
     private PlayerController _playerController;
 
@@ -40,7 +41,9 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
-        if (Input.GetAxisRaw("Vertical") > 0f)
+        verticalInput = SimpleInput.GetAxis("Vertical");
+
+        if (verticalInput > 0f)
         {
             Vector3 temp = transform.position;
             temp.y += speed * Time.deltaTime;
@@ -50,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
             transform.position = temp;
         }
-        else if (Input.GetAxisRaw("Vertical") < 0f)
+        else if (verticalInput < 0f)
         {
             Vector3 temp = transform.position;
             temp.y -= speed * Time.deltaTime;
